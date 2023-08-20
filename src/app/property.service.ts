@@ -15,4 +15,9 @@ export class PropertyService {
     console.log("get all properties")
     return this.http.get<Property[]>(this.url);
   }
+
+  addProperty(property:Property):Observable<Property[]>{
+    //@ts-ignore
+    return this.http.post<Property[]>(this.url, property, {responseType:'text'})
+  }
 }

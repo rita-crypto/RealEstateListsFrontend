@@ -6,4 +6,10 @@ export class Property {
     propertyType?: String;
     price?: number;
     area?: number
+    location?:Location
+    numberOfBedrooms?: number;
+    numberOfBathrooms?:number;
+    propertyStatus?: String;
+    listingTodaysDate?: Date;
+    lastUpdateDate?: Date;
 }
