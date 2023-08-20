@@ -1,21 +1,62 @@
 <p>property-list works!</p>
 <div class="row m-3">
 
-    <div class="col-md-2">
+    <div class="col-md-3">
+        <label class="h1 text-primary">PropertyFinder</label>
+    </div>
+
+    <div class="col-md-3">
         <input class="form-control" placeholder="Search"/>
     </div>
-    <div class="col-md-1">
-        <button placeholder="Search">Search</button>
+    <div class="col-md-3">
+        <button class="btn btn-primary" type="button">Search</button>
     </div>
-
-    <div class="col-md-3 dropdown">
-        <button class="btn btn-primary" >Price</button>
-        
-           
-        
-    </div>
-</div>
-
-<div class="row m-3">
     
+    <div class="col-md-3">
+        <button class="btn btn-primary" routerLink="/new" type="button">Add new property</button>
+    </div>
+
 </div>
+
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Property Id</th>
+                <th>PropertyType</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Bed</th>
+                <th>Bath</th>
+                <th>PropertyStatus</th>
+                <th>Listing Date</th>
+                <th>Last Update Date</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let property of propertyList">
+            <td>{{property.propertyId}}</td>
+            <td>{{property.propertyType}}</td>
+            <td>{{property.title}}</td>
+            <td>{{property.description}}</td>
+            <td>{{property.price}}</td>
+            <td>{{property.numberOfBedrooms}}</td>
+            <td>{{property.numberOfBathrooms}}</td>
+            <td>{{property.propertyStatus}}</td>
+            <td>{{property.listingTodaysDate}}</td>
+            <td>{{property.lastUpdateDate}}</td>
+            <td>
+                <button class="btn btn-primary">Update</button>
+                <button class="btn btn-danger m-1">Delete</button>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+   
+
+
