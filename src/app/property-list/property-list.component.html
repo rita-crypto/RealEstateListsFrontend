@@ -27,6 +27,7 @@
                 <th>Title</th>
                 <th>Description</th>
                 <th>Price</th>
+                <th>Location</th>
                 <th>Bed</th>
                 <th>Bath</th>
                 <th>PropertyStatus</th>
@@ -42,14 +43,15 @@
             <td>{{property.title}}</td>
             <td>{{property.description}}</td>
             <td>{{property.price}}</td>
+            <td>{{property.location?.city}}, {{property.location?.state}}, {{property.location?.zipCode}}</td>
             <td>{{property.numberOfBedrooms}}</td>
             <td>{{property.numberOfBathrooms}}</td>
             <td>{{property.propertyStatus}}</td>
             <td>{{property.listingTodaysDate}}</td>
             <td>{{property.lastUpdateDate}}</td>
             <td>
-                <button class="btn btn-primary">Update</button>
-                <button class="btn btn-danger m-1">Delete</button>
+                <button class="btn btn-primary" routerLink="/update/{{property.propertyId}}">Update</button>
+                <button class="btn btn-danger m-1" (click)="deleteProperty(property.propertyId)">Delete</button>
             </td>
             </tr>
         </tbody>

@@ -1,4 +1,81 @@
-<p>newproperty-list works!</p>
+
 <div class="container">
-    <div>Property Details</div>
+    <div class="h2 mb-4 text-primary">Property Details</div>
+   <form [formGroup] = "propertyForm" (ngSubmit)="saveProperty()">
+
+    <div class="form-group">
+        <label for="propertyId" class="text-primary">PropertyId</label>
+        <input id="propertyId" class="form-control shadow-sm" type="number" formControlName="propertyId" readonly>  
+    </div>
+
+    <div class="form-group">
+        <label for="title" class="text-primary">Title</label>
+        <input id="title" class="form-control" type="text" formControlName="title">
+    </div>
+
+    <div class="form-group">
+        <label for="description" class="text-primary">Description</label>
+        <input id="description" class="form-control" type="text" formControlName="description">
+    </div>
+
+    <div class="form-group">
+        <label for="propertyType" class="text-primary">PropertyType</label>
+        <select id="propertyType" class="form-control" formControlName="propertyType">
+            <option value="">Select property type</option>
+            <option value="Apartment">Apartment</option>
+            <option value="House">House</option>
+            </select>
+    </div>
+
+    <div class="form-group">
+        <label for="price" class="text-primary">Price</label>
+        <input id="price" class="form-control" type="number" formControlName="price">
+    </div>
+
+    <div class="form-group">
+        <label for="area" class="text-primary">Area</label>
+        <input id="area" class="form-control" type="number" formControlName="area">
+    </div>
+
+    <div class="form-group">
+        <label for="city" class="text-primary">City</label>
+        <input id="city" class="form-control" type="text" formControlName="location.city">
+    </div>
+
+    <div class="form-group">
+        <label for="state" class="text-primary">State</label>
+        <input id="state" class="form-control" type="text" formControlName="location.state">
+    </div>
+
+    <div class="form-group">
+        <label for="zipCode" class="text-primary">Zipcode</label>
+        <input id="zipCode" class="form-control" type="text" formControlName="location.zipCode">
+    </div>
+
+    <div class="form-group">
+        <label for="numberOfBedrooms" class="text-primary">NumberOfBedroom</label>
+        <input id="numberOfBedrooms" class="form-control" type="number" formControlName="numberOfBedrooms">
+    </div>
+
+    <div class="form-group">
+        <label for="numberOfBathrooms" class="text-primary">NumberOfBathroom</label>
+        <input id="numberOfBathrooms" class="form-control" type="number" formControlName="numberOfBathrooms">
+    </div>
+
+    <div class="form-group">
+        <label for="propertyStatus" class="text-primary">PropertyStatus</label>
+        <select id="propertyStatus" class="form-control" formControlName="propertyStatus">
+            <option value="">Select property status</option>
+            <option value="Available">Available</option>
+            <option value="Sold Out">Sold out</option>
+            </select>
+    </div>
+
+    <div class="form-group">
+        <label for="listingTodaysDate" class="text-primary">Listing Date</label>
+        <input id="listingTodaysDate" class="form-control" type="date" formControlName="listingTodaysDate">
+    </div>
+
+    <button class="btn btn-success mt-2" type="(submit)">Save</button>
+   </form>
 </div>

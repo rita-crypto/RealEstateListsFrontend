@@ -30,6 +30,13 @@ constructor(private propertyService:PropertyService){
     })
   }
 
+  deleteProperty(propertyId: number): void{
+    this.propertyService.deleteProperty(propertyId).subscribe((result: String)=>{
+      alert(result);
+      this.getPropertyList();
+    })
+  }
+
   addNewProperty():void{
     alert('Add new property button clicked');
   }

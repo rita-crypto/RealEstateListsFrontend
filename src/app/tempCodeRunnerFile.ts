@@ -1,5 +1,3 @@
-import { Location } from "./location";
-
 export class Property {
 //@ts-ignore
     propertyId: number;
