@@ -1,0 +1,65 @@
+
+<div class="row m-3">
+
+    <div class="col-md-3">
+        <label class="h1 text-primary">PropertyFinder</label>
+    </div>
+
+    <div class="col-md-3">
+        <input class="form-control" placeholder="Search"/>
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-primary" type="button">Search</button>
+    </div>
+    
+    <div class="col-md-3">
+        <button class="btn btn-success" routerLink="" type="button">Sign Out</button>
+    </div>
+
+    
+
+</div>
+
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Property Id</th>
+                <th>PropertyType</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Location</th>
+                <th>Bed</th>
+                <th>Bath</th>
+                <th>PropertyStatus</th>
+                <th>Listing Date</th>
+                <th>Last Update Date</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let property of propertyListUser">
+            <td>{{property.propertyId}}</td>
+            <td>{{property.propertyType}}</td>
+            <td>{{property.title}}</td>
+            <td>{{property.description}}</td>
+            <td>{{property.price}}</td>
+            <td>{{property.location?.city}}, {{property.location?.state}}, {{property.location?.zipCode}}</td>
+            <td>{{property.numberOfBedrooms}}</td>
+            <td>{{property.numberOfBathrooms}}</td>
+            <td>{{property.propertyStatus}}</td>
+            <td>{{property.listingDate}}</td>
+            <td>{{property.lastUpdateDate}}</td>
+            <td>
+                <button class="btn btn-primary" routerLink="/propertylistuser/{{property.propertyId}}">Book</button>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+   
+
+

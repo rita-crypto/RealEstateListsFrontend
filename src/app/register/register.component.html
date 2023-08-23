@@ -1,0 +1,48 @@
+<div class="container mt-5">
+   <div class="row justify-content-center">
+       <div class="col-md-12">
+           <div class="card">
+               <div class="h1 card-header" >Register</div>
+               <div class="card-body">
+    <form [formGroup] = "registerForm" (ngSubmit)="register()">
+
+        <div class="form-group">
+            <label for="firstName"><span style="color: red;">*</span> FirstName</label>
+            <input id="firstName" class="form-control" type="text" formControlName="firstName">
+            <div *ngIf="registerForm.get('firstName')?.errors?.['required'] && registerForm.get('firstName')?.touched" class="err">Please provide FirstName.</div>
+         </div>
+       
+
+     <div class="form-group">
+        <label for="lastName"><span class="err">*</span> LastName</label>
+        <input id="lastName" class="form-control" type="text" formControlName="lastName">
+        <div *ngIf="registerForm.get('lastName')?.errors?.['required'] && registerForm.get('lastName')?.touched" class="err">Please provide LastName.</div>
+
+     </div>
+
+
+        <div class="form-group">
+            <label for="email"><span class="err">*</span> Email</label>
+            <input id="email" class="form-control" type="text" formControlName="email">
+            <div *ngIf="registerForm.get('email')?.errors?.['email'] && registerForm.get('email')?.touched" class="err">Invalid email address.</div>
+            <div *ngIf="registerForm.get('email')?.errors?.['required'] && registerForm.get('email')?.touched" class="err">Please provide Email.</div>
+
+         </div>
+     
+
+     <div class="form-group">
+        <label for="password"><span class="err">*</span> Password</label>
+        <input id="password" class="form-control" type="password" formControlName="password" [minlength]="8">
+        <div *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.touched" class="err">Please provide Password.</div>
+        <div *ngIf="registerForm.get('password')?.errors?.['minlength'] && registerForm.get('password')?.touched" class="err">Password should contain minimum 8 characters</div>
+
+
+     </div>
+
+     <button class="btn btn-success m-2" type="submit" [disabled]="registerForm.invalid">Register</button>
+</form>
+</div>
+</div>
+</div>
+<div>
+</div>
