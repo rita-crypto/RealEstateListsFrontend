@@ -12,6 +12,6 @@ export class Property {
     numberOfBedrooms?: number;
     numberOfBathrooms?:number;
     propertyStatus?: String;
-    listingTodaysDate?: Date;
+    listingDate?: Date;
     lastUpdateDate?: Date;
 }

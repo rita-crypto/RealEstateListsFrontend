@@ -28,17 +28,14 @@ export class PropertylistuserComponent implements OnInit {
     })
   }
 
-  bookProperty(propertyId: number): void {
-    this.router.navigate(['/propertylistuser/book'], {
-      queryParams: {
-        propertyId: propertyId,
-        userFirstName: 'firstName',
-        userEmail: 'email',
-        userId: 'userId'
-      }
-    });
+  //bookProperty(propertyId: number): void {
+    //this.router.navigate(['/propertylistuser/book']);
 
   
+//}
+
+bookProperty():void{
+  alert('Add new property button clicked');
 }
 
 
