@@ -30,13 +30,12 @@ export class BookinguserComponent implements OnInit {
       dateTime: [''],
       inquiry: [''],
       user: this.formBuilder.group({firstName: [''], email: ['']}),
-      property: this.formBuilder.group({title: ['']})
-
+      propertyId: ['']
 
     });
 
     
-
+    //created branch and updated code
     //@ts-ignore
     this.id = this.route.snapshot.paramMap.get('bookingId');
     console.log(this.id);
@@ -47,7 +46,7 @@ export class BookinguserComponent implements OnInit {
       //this.bookingservice.getBookingById(this.id).subscribe((bookingData: Booking)=>{
         //this.bookingForm.patchValue(this.bookingData);
       //});
-      this.bookingservice.getBookingById(this.id).subscribe((bookingData: Property)=>{
+      this.bookingservice.getBookingById(this.id).subscribe((bookingData: Booking)=>{
         this.bookingForm.patchValue(bookingData);   
       });
     } 
@@ -64,5 +63,13 @@ export class BookinguserComponent implements OnInit {
 
     })
   } 
+
+  saveBooking1():void{
+    const booking = this.bookingForm.value;
+    this.bookingservice.saveBooking(booking).subscribe((message: string)=>{
+      this.router.navigate(['']);
+
+    })
+  }
 
 }

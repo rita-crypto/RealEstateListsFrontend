@@ -8,13 +8,26 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PropertyListComponent } from './property-list/property-list.component';
 import { NewpropertyListComponent } from './newproperty-list/newproperty-list.component';
 import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { LoginadminComponent } from './loginadmin/loginadmin.component';
+import { PropertylistuserComponent } from './propertylistuser/propertylistuser.component';
+import { BookinguserComponent } from './bookinguser/bookinguser.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     PropertyListComponent,
     NewpropertyListComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent,
+    LoginComponent,
+    LoginadminComponent,
+    PropertylistuserComponent,
+    BookinguserComponent,
+  
+    
    
   ],
   imports: [
